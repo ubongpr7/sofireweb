@@ -1,0 +1,14 @@
+services:
+  social-app:
+    image: ubongpr7/social-test-app:latest
+    container_name: social-test-app
+    ports:
+      - "3000:3000"          
+    environment:
+      - NODE_ENV=development 
+    volumes:
+      - .:/app               
+      - /app/node_modules    
+    command: ["yarn", "dev"] 
+    restart: unless-stopped
+
