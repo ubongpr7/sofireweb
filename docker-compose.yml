@@ -3,7 +3,7 @@ services:
     image: ubongpr7/sofireweb
     container_name: social-test-app
     ports:
-      - "3000:3000"          
+      - "3000:3000"  
     environment:
       - NODE_ENV=development 
     volumes:
