@@ -13,7 +13,7 @@ export const makeStore = ()=>
         //     [apiSlice.reducerPath]:[],
             auth: authReducer
         },
-        devtools:process.NODE_ENV !=='production'
+        // devtools:process.NODE_ENV !=='production'
     })
 
     export type AppStore =ReturnType<typeof makeStore>;
