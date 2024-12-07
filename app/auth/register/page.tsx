@@ -1,3 +1,4 @@
+'use client'
 export default function Register() {
   // Placeholder for the form submission handler
   const handleSubmit = (e) => {
