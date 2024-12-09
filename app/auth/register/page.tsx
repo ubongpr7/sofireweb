@@ -11,6 +11,7 @@ export default function Register() {
     password: "",
     re_password: "",
   });
+  const {register,{isLoading}}=useRegisterMutation()
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -27,37 +28,14 @@ export default function Register() {
       alert("Passwords do not match!");
       return;
     }
+    register({formData.first_name,formData.last_name,formData.email,formData.password,formData.re_password})
+    .unwrap()
+    .then(()=>{
+      alert("Registration successful!")
+    })
+    .catch(()=>{
 
-    try {
-      const response = await fetch("http://your-backend-domain/api/register/", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          first_name: formData.first_name,
-          last_name: formData.last_name,
-          email: formData.email,
-          password: formData.password,
-        }),
-      });
-
-      if (response.ok) {
-        alert("User registered successfully!");
-        setFormData({
-          first_name: "",
-          last_name: "",
-          email: "",
-          password: "",
-          re_password: "",
-        });
-      } else {
-        const errorData = await response.json();
-        alert(`Registration failed: ${errorData.message}`);
-      }
-    } catch (error) {
-      alert("An error occurred: " + error.message);
-    }
+    })
   };
 
   return (

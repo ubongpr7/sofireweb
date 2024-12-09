@@ -1,6 +1,6 @@
 services:
   social-app:
-    image: ubongpr7/sofireweb
+    image: ubongpr7/sofireweb:latest
     container_name: social-test-app
     ports:
       - "3000:3000"  
