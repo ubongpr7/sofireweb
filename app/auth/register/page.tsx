@@ -134,12 +134,13 @@ export default function Register() {
             cursor: "pointer",
           }}
         >
-          <div>
+          
+          Register
+        </button>
+        <div>
           <span>Already have an account? </span><Link href="auth/login" >Login here</Link>
 
           </div>
-          Register
-        </button>
       </form>
     </div>
   );
