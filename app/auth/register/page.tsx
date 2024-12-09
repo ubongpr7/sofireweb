@@ -2,7 +2,7 @@
 
 import { useState,changeEvent } from "react";
 import Link from "next/link";
-
+import { useRegisterMutation } from "@/redux/features/authApiSlice";
 export default function Register() {
   const [formData, setFormData] = useState({
     first_name: "",
