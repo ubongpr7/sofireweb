@@ -11,7 +11,7 @@ export default function Register() {
     password: "",
     re_password: "",
   });
-  const {register,{isLoading}}=useRegisterMutation()
+  const [register,{isLoading}]=useRegisterMutation()
 
   const handleChange = (e) => {
     const { name, value } = e.target;
