@@ -12,7 +12,8 @@ export default function Register() {
     re_password: "",
   });
   const [register,{isLoading}]=useRegisterMutation()
-
+  const {first_name,last_name,email,password,re_password}=formData
+  
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
@@ -28,7 +29,7 @@ export default function Register() {
       alert("Passwords do not match!");
       return;
     }
-    register({formData.first_name,formData.last_name,formData.email,formData.password,formData.re_password})
+    register({first_name,last_name,email,password,re_password})
     .unwrap()
     .then(()=>{
       alert("Registration successful!")
