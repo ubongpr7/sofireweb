@@ -1,6 +1,7 @@
 'use client';
 
-import { useState } from "react";
+import { useState,changeEvent } from "react";
+import Link from "next/link";
 
 export default function Register() {
   const [formData, setFormData] = useState({
@@ -133,6 +134,10 @@ export default function Register() {
             cursor: "pointer",
           }}
         >
+          <div>
+          <span>Already have an account? </span><Link href="auth/login" >Login here</Link>
+
+          </div>
           Register
         </button>
       </form>
